@@ -5,6 +5,7 @@ import Out from './components/Out';
 import Songs from './components/Songs';
 import "./components/main.css"
 import Login from './components/Login';
+import Search from './components/Search';
 //import Main from './components/Main';
 
 function App() {
@@ -15,12 +16,15 @@ function App() {
       <Navbar/>
      <Out/>
       </Route>
-      <Route exact path="/Songs/:id">
-       <Navbar/>
+      <Route exact path="/Songs/:Artist">
+       {/* <Navbar/> */}
        <Songs/>
       </Route>
        <Route exact path="/Login">
        <Login/>
+      </Route>
+        <Route exact path="/albums/:Artist">
+       <Search/>
       </Route>
     </div>
   );

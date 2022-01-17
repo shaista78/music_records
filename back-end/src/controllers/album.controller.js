@@ -3,23 +3,23 @@ const Album = require("../models/album.model");
 const router = express.Router();
 
 router.get("/",async(req,res)=>{
-  const page=+req.query.page || 1;
-  const size =+req.query.page || 3;
+  const page=+req.query.page || 2;
+  const size =+req.query.size || 3;
   const offset=(page-1)*size;
-   const album = await Album.find().populate("songs").skip(offset).lean().exec();
+   const album = await Album.find().populate("songs").skip(offset).limit(size).lean().exec();
    const totalCount = await Album.find().countDocuments();
    const totalPage = Math.ceil(totalCount/size)
    return res.status(200).send({album,totalPage});
 })
-router.get("/:Artist",async(req,res)=>{
+router.get("/albums/:Artist",async(req,res)=>{
     
     const album = await Album.findOne({Artist:req.params.Artist});
     console.log(album);
     return res.status(200).send({album});
 })
-router.get("/Songs/:_id",async(req,res)=>{
+router.get("/Songs/:Artist",async(req,res)=>{
     
-    const album = await Album.findOne({_id:req.params._id});
+    const album = await Album.findOne({Artist:req.params.Artist});
     //console.log(album);
     return res.status(200).send({album});
 })

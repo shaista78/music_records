@@ -16,26 +16,8 @@ function Out() {
       const total = res.data.totalPage;
       setTotal(total);
       console.log(data,total);
-                //const slice = data.slice(offset, offset + perPage)
-                // const postData = slice.map(dta => 
-                //      <div key={dta._id}>
-                //         <div className='albums'>
-                //         <div className='cover_img'>
-                //         <img className='cover' src={dta.Image} alt="imgs" />
-                //         </div>
-                //     <div className='album-data'>
-                //         <p> <b>Artist:</b> {dta.Artist}</p>
-                //         <p> <b>Songs :</b>{dta.songs.length}</p>
-                //         <p> <b>Genre:</b>{dta.Genre}</p>
-                //         <p> <b>Year:</b>{dta.year}</p>
-                //     <button className='Songs' ><Link to={`/Songs/${dta._id}`} className='Songs'> All Songs</Link></button>
-                //     </div>
-                // </div>
-      
-                // </div>)
                 setData(data)
                 console.log(pageCount)
-               // setPageCount(Math.ceil(data.length / perPage))
   }
   const handlePageClick1 = () => {
     if(pageCount> 1){
@@ -85,18 +67,6 @@ function Out() {
       <button onClick={handlePageClick1} id="btn1" ><Link to={`?size=${3}&page=${pageCount}`} className='Songs'> prev</Link></button>
       &emsp;&emsp;<b style={{color:"white"}} >{pageCount}</b>&emsp;&emsp;
       <button onClick={handlePageClick} id="btn"><Link to={`?size=${3}&page=${pageCount}`} className='Songs'> next</Link></button>
-       {/* <ReactPaginate
-                 previousLabel={"prev"}
-                    nextLabel={"next"}
-                    breakLabel={"..."}
-                    breakClassName={"break-me"}
-                    pageCount={pageCount}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
-                    onPageChange={handlePageClick}
-                    containerClassName={"pagination"}
-                    subContainerClassName={"pages pagination"}
-                    activeClassName={"active"}/> */}
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function Navbar() {
 
     return (
         <div>
-        <b style={{color:"white"}}>Albums and Songs</b>    <input type="search" name="" id="query"     placeholder='Search for artist' />
+        <b style={{color:"white"}}>Albums and Songs</b>    <input type="search" name="" id="query" onChange={(e)=>setPar(e.target.value)}    placeholder='Search for artist' />
             <button onClick={handleRes}><Link to={`albums/${par}`} className='Songs'> Search</Link></button>
         </div>
     )

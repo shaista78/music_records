@@ -14,7 +14,7 @@ router.get("/",async(req,res)=>{
 router.get("/albums/:Artist",async(req,res)=>{
     
     const album = await Album.findOne({Artist:req.params.Artist});
-    console.log(album);
+   // console.log(album);
     return res.status(200).send({album});
 })
 router.get("/Songs/:Artist",async(req,res)=>{

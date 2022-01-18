@@ -47,14 +47,19 @@ function Out() {
     <b>Filters</b>&emsp;
     <label>Genre</label>
         <select >
-            <option>All</option>
-            <option>Classical</option>
-            <option>Rock</option>
-            <option>Melody</option>
+            <option value="all">All</option>
+            <option value="Classical">Classical</option>
+            <option value="Rock">Rock</option>
+            <option value="Melody">Melody</option>
         </select>
         &emsp;
         <label>Sort by year</label>
-        <input />
+          <select >
+            <option value="all">All</option>
+            <option value="2020">2020</option>
+            <option value="2021" >2021</option>
+            <option value="2022">2022</option>
+        </select>
     </div>
      {data.map(dta => 
                      <div key={dta._id}>

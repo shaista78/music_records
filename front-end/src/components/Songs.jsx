@@ -20,7 +20,9 @@ export default function Songs() {
     }, [])
     return (
         <>
-
+            <div style={{float:"right" ,color: "white"}}>
+            <label>Login to Edit details : </label><button > Login</button>&emsp;
+            </div>
             <div style={{ color: "white" ,marginTop:"15px"}} >
                 <img style={{ width: "15%", height: "15%" }} src={data.Image} />
                 <p>Artist:{data.Artist}   </p>

@@ -2,6 +2,12 @@ const express = require("express");
 const Album = require("../models/album.model");
 const router = express.Router();
 
+router.get("/albums",async(req,res)=>{
+    
+    const album = await Album.find();
+   // console.log(album);
+    return res.status(200).send({album});
+})
 router.get("/",async(req,res)=>{
   const page=+req.query.page || 2;
   const size =+req.query.size || 3;

@@ -17,7 +17,6 @@ function App() {
      <Out/>
       </Route>
       <Route exact path="/Songs/:Artist">
-       {/* <Navbar/> */}
        <Songs/>
       </Route>
        <Route exact path="/Login">

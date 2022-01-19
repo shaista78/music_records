@@ -6,6 +6,7 @@ import Songs from './components/Songs';
 import "./components/main.css"
 import Login from './components/Login';
 import Search from './components/Search';
+import Edit from './components/Edit';
 //import Main from './components/Main';
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
         <Route exact path="/albums/:Artist">
        <Search/>
       </Route>
+       <Route exact path="/edit/:Artist">
+      <Edit/>
+        </Route>
     </div>
   );
 }
